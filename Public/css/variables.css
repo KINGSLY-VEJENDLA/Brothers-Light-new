@@ -1,0 +1,62 @@
+:root{
+
+    --primary:#990011;
+    --primary-light:#C20F22;
+
+    --bg-dark:#0B0B0B;
+    --bg-light:#FCF6F5;
+
+    --text-dark:#111111;
+    --text-light:#ffffff;
+    --text-grey:#737373;
+
+    --border:rgba(255,255,255,.08);
+
+    --glass:rgba(255,255,255,.08);
+
+    --radius:20px;
+
+    --container:1400px;
+
+    --transition:.35s ease;
+
+}
+
+:root{
+
+    /* Brand */
+    --primary:#990011;
+    --primary-light:#B80D1F;
+
+    /* Backgrounds */
+    --bg-dark:#080808;
+    --bg-light:#FCF6F5;
+
+    /* Text */
+    --text-dark:#101010;
+    --text-light:#ffffff;
+    --text-grey:#6b7280;
+
+    /* Glass */
+    --glass:rgba(255,255,255,.08);
+    --glass-border:rgba(255,255,255,.12);
+
+    /* Border */
+    --border:#e5e7eb;
+
+    /* Radius */
+    --radius-sm:10px;
+    --radius:18px;
+    --radius-lg:28px;
+
+    /* Shadow */
+    --shadow:0 20px 60px rgba(0,0,0,.08);
+
+    /* Layout */
+    --container:1400px;
+
+    /* Animation */
+
+    --transition:.35s ease;
+
+}

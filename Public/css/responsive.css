@@ -1,0 +1,343 @@
+/*=========================================
+            1400px
+=========================================*/
+
+@media (max-width:1400px){
+
+.container{
+    width:90%;
+}
+
+.hero-left h1{
+    font-size:clamp(3rem,5vw,4.5rem);
+}
+
+.about-left h2{
+    font-size:50px;
+}
+
+.dashboard{
+    width:min(100%,560px);
+}
+
+}
+
+/*=========================================
+            1200px
+=========================================*/
+
+@media (max-width:1200px){
+
+.hero-container,
+.about-container{
+    gap:60px;
+}
+
+.hero-left h1{
+    font-size:54px;
+}
+
+.about-left h2{
+    font-size:46px;
+}
+
+.dashboard{
+    width:500px;
+}
+
+}
+
+/*=========================================
+            992px
+=========================================*/
+
+@media (max-width:992px){
+
+/* Navbar */
+
+.nav-links{
+
+    position:fixed;
+
+    top:90px;
+    right:-100%;
+
+    width:320px;
+    height:calc(100vh - 90px);
+
+    background:#111;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:40px;
+
+    gap:30px;
+
+    transition:.4s;
+
+    z-index:999;
+
+}
+
+.nav-links.active{
+    right:0;
+}
+
+.menu-btn{
+    display:block;
+}
+
+.btn-primary{
+    display:none;
+}
+
+.mega-menu{
+    display:none;
+}
+
+/* Hero */
+
+.hero{
+    padding-top:150px;
+}
+
+.hero-container{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-left,
+.about-left{
+    max-width:100%;
+}
+
+.hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.hero-right{
+    margin-top:60px;
+}
+
+.dashboard{
+    width:100%;
+    max-width:600px;
+}
+
+/* About */
+
+.about-container{
+    flex-direction:column;
+}
+
+.about-right{
+    margin-top:50px;
+}
+
+.card-a{
+    top:20px;
+    left:20px;
+}
+
+.card-b{
+    right:20px;
+    bottom:20px;
+}
+
+}
+
+/*=========================================
+            768px
+=========================================*/
+
+@media (max-width:768px){
+
+.container{
+    width:92%;
+}
+
+/* Hero */
+
+.hero{
+    min-height:auto;
+    padding:140px 0 80px;
+}
+
+.hero-left h1{
+    font-size:42px;
+}
+
+.hero-left p{
+    font-size:16px;
+}
+
+/* About */
+
+.about-left h2{
+    font-size:38px;
+}
+
+.about-left p{
+    font-size:16px;
+}
+
+/* Dashboard */
+
+.dashboard{
+    width:100%;
+}
+
+/* Floating Cards */
+
+.floating-card{
+    display:none;
+}
+
+.info-card{
+
+    position:relative;
+
+    width:100%;
+
+    margin-top:20px;
+
+    left:auto;
+    right:auto;
+    top:auto;
+    bottom:auto;
+
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+    flex-direction:column;
+
+    width:100%;
+
+}
+
+.hero-buttons a{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+}
+
+/*=========================================
+            576px
+=========================================*/
+
+@media (max-width:576px){
+
+.container{
+    width:92%;
+}
+
+.hero-left h1{
+
+    font-size:34px;
+
+    letter-spacing:-1px;
+
+}
+
+.about-left h2{
+
+    font-size:32px;
+
+}
+
+.hero-tag,
+.section-tag{
+
+    font-size:11px;
+
+    padding:10px 16px;
+
+}
+
+.hero-left p,
+.about-left p{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+.dashboard{
+
+    border-radius:18px;
+
+}
+
+}
+
+/* =========================================
+   MOBILE NAVBAR
+========================================= */
+
+@media (max-width: 992px) {
+
+    .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .nav-links {
+        position: fixed;
+        top: 90px;
+        right: -100%;
+        width: 320px;
+        height: calc(100vh - 90px);
+
+        background: #0B0B0B;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 40px 30px;
+        gap: 25px;
+
+        transition: right 0.4s ease;
+
+        z-index: 9999;
+    }
+
+    .navbar .nav-links.active {
+        right: 0;
+    }
+
+    .navbar .menu-btn {
+        display: block;
+        position: relative;
+        z-index: 10000;
+        cursor: pointer;
+    }
+
+    .navbar .menu-btn span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin: 6px 0;
+        background: #fff;
+        border-radius: 10px;
+    }
+
+    .navbar .btn-primary {
+        display: none;
+    }
+
+    .navbar .mega-menu {
+        display: none;
+    }
+}

@@ -1,0 +1,459 @@
+/*=========================================
+            SERVICES
+=========================================*/
+
+.services{
+
+    position:relative;
+
+    background:#0B0B0B;
+
+    padding:140px 0;
+
+    /* overflow:hidden;
+    BORDER-BOTTOM-LEFT-RADIUS: 70px;
+    BORDER-BOTTOM-RIGHT-RADIUS: 70px;
+    BORDER-TOP-LEFT-RADIUS: 70px;
+    BORDER-TOP-RIGHT-RADIUS: 70px; */
+
+}
+
+/*=========================================
+            BACKGROUND GRID
+=========================================*/
+
+.services-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+
+    background-size:70px 70px;
+
+    opacity:.25;
+
+}
+
+/*=========================================
+            GLOW
+=========================================*/
+
+.services-glow{
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    filter:blur(130px);
+
+    opacity:.28;
+
+}
+
+.services-glow-1{
+
+    background:#990011;
+
+    left:-220px;
+
+    top:-150px;
+
+}
+
+.services-glow-2{
+
+    background:#2563EB;
+
+    right:-220px;
+
+    bottom:-150px;
+
+}
+
+/*=========================================
+            LAYOUT
+=========================================*/
+
+.services-wrapper{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:420px 1fr;
+
+    gap:80px;
+
+    align-items:start;
+
+}
+
+/*=========================================
+            LEFT
+=========================================*/
+
+.services-content{
+
+    position:sticky;
+
+    top:140px;
+
+}
+
+.services .section-tag{
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+}
+
+.services .section-title{
+
+    color:#fff;
+
+    margin:20px 0;
+    font-weight:700;
+    font-size:43px;
+
+}
+
+.services .section-text{
+
+    color:rgba(255,255,255,.70);
+
+    margin-bottom:40px;
+
+}
+
+/*=========================================
+            CARD GRID
+=========================================*/
+
+.services-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:28px;
+
+}
+
+/*=========================================
+            CARD
+=========================================*/
+
+.service-card{
+
+    position:relative;
+
+    padding:38px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        background .35s ease;
+
+}
+
+/* Animated Border */
+
+/* .service-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:1px;
+
+    border-radius:28px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.15),
+        rgba(153,0,17,.6),
+        rgba(37,99,235,.5)
+    );
+
+    /* -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0); */
+/* 
+    -webkit-mask-composite:xor;
+
+            mask-composite:exclude;
+
+    opacity:0;
+
+    transition:.45s;
+
+} */ */
+
+/* Glow */
+
+.service-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    background:#990011;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    top:-120px;
+
+    right:-120px;
+
+    opacity:0;
+
+    transition:.45s;
+
+}
+
+/* Hover */
+
+.service-card:hover{
+
+    transform:translateY(-12px);
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.service-card:hover::before{
+
+    opacity:1;
+
+}
+
+.service-card:hover::after{
+
+    opacity:.35;
+
+}
+
+/*=========================================
+            ICON
+=========================================*/
+
+.service-icon{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(135deg,#990011,#2563EB);
+
+    color:#fff;
+
+    font-size:28px;
+
+    margin-bottom:28px;
+
+    transition:.45s;
+
+}
+
+.service-card:hover .service-icon{
+
+    transform:rotate(10deg) scale(1.08);
+
+}
+
+/*=========================================
+            TEXT
+=========================================*/
+
+.service-card h3{
+
+    font-size:24px;
+
+    color:#fff;
+
+    margin-bottom:18px;
+
+}
+
+.service-card p{
+
+    color:rgba(255,255,255,.70);
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/*=========================================
+            LINK
+=========================================*/
+
+.service-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.service-link i{
+
+    transition:.35s;
+
+}
+
+.service-card:hover .service-link i{
+
+    transform:translateX(8px);
+
+}
+
+.service-card.show-service{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.service-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    left:calc(var(--x) - 130px);
+    top:calc(var(--y) - 130px);
+
+    background:radial-gradient(circle,
+        rgba(153,0,17,.35),
+        transparent 70%);
+
+    opacity:0;
+
+    transition:.25s;
+
+    pointer-events:none;
+
+}
+
+
+
+/* Responsive */
+
+/*=====================================
+            SERVICES
+=====================================*/
+
+@media(max-width:1200px){
+
+.services-wrapper{
+
+    grid-template-columns:1fr;
+
+}
+
+.services-content{
+
+    position:static;
+
+    text-align:center;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.services-cards{
+
+    margin-top:70px;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.services-cards{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.services{
+
+    padding:90px 0;
+
+}
+
+.services-cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.service-card{
+
+    padding:30px;
+
+}
+
+}

@@ -1,0 +1,202 @@
+/*=========================================
+            CTA
+=========================================*/
+
+.cta{
+
+    padding:140px 0;
+
+    background:#ffffff;
+
+}
+
+.cta-wrapper{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:90px;
+
+    align-items:center;
+
+}
+
+.cta-image{
+
+    text-align:center;
+
+}
+
+.cta-image img{
+
+    width:100%;
+
+    max-width:600px;
+
+    border-radius:28px;
+
+    box-shadow:0 30px 70px rgba(0,0,0,.08);
+
+    animation:floatCTA 6s ease-in-out infinite;
+
+}
+
+@keyframes floatCTA{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+.cta-content h2{
+
+    font-size:58px;
+
+    line-height:1.1;
+
+      background:linear-gradient(
+        135deg,
+        #020202 0%,
+        #4D8CFF 30%,
+        #990011 65%,
+        #FF4FA3 100%
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    margin:20px 0;
+
+    font-weight:800;
+
+}
+
+.cta-content p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#666;
+
+    margin-bottom:40px;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-outline-dark{
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    border:2px solid #111;
+
+    text-decoration:none;
+
+    color:#111;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn-outline-dark:hover{
+
+    background:#111;
+
+    color:#fff;
+
+}
+.cta{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:all .9s ease;
+
+}
+
+.cta.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* Responsive */
+
+
+/*=========================================
+            CTA
+=========================================*/
+
+@media(max-width:992px){
+
+.cta-wrapper{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.cta-content{
+
+    order:2;
+
+}
+
+.cta-image{
+
+    order:1;
+
+}
+
+.cta-buttons{
+
+    justify-content:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.cta{
+
+    padding:90px 0;
+
+}
+
+.cta-content h2{
+
+    font-size:40px;
+
+}
+
+}
