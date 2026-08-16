@@ -253,3 +253,91 @@ box-shadow:0 40px 90px rgba(0,0,0,.55);
 .arrow-btn:hover{
     transform:translateY(-5px);
 }
+
+/* =========================================
+   HOME MOBILE FIX
+========================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-y: auto;
+}
+
+.home,
+.hero,
+.hero-container,
+.hero-left,
+.hero-right {
+    max-width: 100%;
+}
+
+.hero {
+    width: 100%;
+    min-height: auto;
+}
+
+.hero-container {
+    width: 92%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.hero-left,
+.hero-right {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        width: 100%;
+        min-height: auto;
+        padding: 130px 0 70px;
+        overflow: hidden;
+    }
+
+    .hero-container {
+        width: 92%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-left h1 {
+        font-size: 42px;
+        line-height: 1.1;
+    }
+
+    .hero-left p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .dashboard {
+        width: 100%;
+        max-width: 100%;
+    }
+}
