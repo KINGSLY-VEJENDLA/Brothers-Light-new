@@ -32,7 +32,7 @@ backdrop-filter:blur(18px);
 border:1px solid rgba(255,255,255,.08);
 
 z-index:9999;
-
+isolation: isolate;
 transition:.4s;
 
 }
@@ -104,36 +104,55 @@ color:#990011;
 
 }
 
-.btn-primary{
+/* =========================================
+   NAVBAR CTA
+========================================= */
 
-padding:14px 28px;
+.navbar-cta {
+    display: inline-flex;
 
-border-radius:50px;
+    align-items: center;
+    justify-content: center;
 
-background: linear-gradient(
-135deg,
-#000000 0%,
-#0047FF 35%,
-#D90429 70%,
-#FF4FA3 100%
-);
+    padding: 13px 26px;
 
-color:white;
+    min-height: 44px;
 
-font-weight:600;
+    border-radius: 50px;
 
-text-decoration:none;
+    background: #990011;
 
-transition:.35s;
+    color: #ffffff !important;
 
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    border: 1px solid #990011;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
 }
 
-.btn-primary:hover{
+.navbar-cta:hover {
+    background: #7d000e;
 
-transform:translateY(-3px);
+    border-color: #7d000e;
 
-box-shadow:0 15px 35px rgba(153,0,17,.4);
+    color: #ffffff !important;
 
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(153, 0, 17, .25);
 }
 
 .dropdown:hover .mega-menu{
