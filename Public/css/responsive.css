@@ -53,49 +53,6 @@
 
 @media (max-width:992px){
 
-/* Navbar */
-
-.nav-links{
-
-    position:fixed;
-
-    top:90px;
-    right:-100%;
-
-    width:320px;
-    height:calc(100vh - 90px);
-
-    background:#111;
-
-    display:flex;
-    flex-direction:column;
-
-    padding:40px;
-
-    gap:30px;
-
-    transition:.4s;
-
-    z-index:999;
-
-}
-
-.nav-links.active{
-    right:0;
-}
-
-.menu-btn{
-    display:block;
-}
-
-.btn-primary{
-    display:none;
-}
-
-.mega-menu{
-    display:none;
-}
-
 /* Hero */
 
 .hero{
@@ -278,66 +235,4 @@
 
 }
 
-}
-
-/* =========================================
-   MOBILE NAVBAR
-========================================= */
-
-@media (max-width: 992px) {
-
-    .navbar .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .navbar .nav-links {
-        position: fixed;
-        top: 90px;
-        right: -100%;
-        width: 320px;
-        height: calc(100vh - 90px);
-
-        background: #0B0B0B;
-
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        padding: 40px 30px;
-        gap: 25px;
-
-        transition: right 0.4s ease;
-
-        z-index: 9999;
-    }
-
-    .navbar .nav-links.active {
-        right: 0;
-    }
-
-    .navbar .menu-btn {
-        display: block;
-        position: relative;
-        z-index: 10000;
-        cursor: pointer;
-    }
-
-    .navbar .menu-btn span {
-        display: block;
-        width: 30px;
-        height: 3px;
-        margin: 6px 0;
-        background: #fff;
-        border-radius: 10px;
-    }
-
-    .navbar .btn-primary {
-        display: none;
-    }
-
-    .navbar .mega-menu {
-        display: none;
-    }
 }

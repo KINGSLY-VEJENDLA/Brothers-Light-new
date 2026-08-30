@@ -24,8 +24,6 @@ body{
 
     color:var(--text-dark);
 
-    overflow-x:hidden;
-
     text-rendering:optimizeLegibility;
 
     -webkit-font-smoothing:antialiased;

@@ -1,77 +1,60 @@
-const navbar = document.getElementById("navbar");
+document.addEventListener("DOMContentLoaded", function () {
 
-window.addEventListener("scroll", () => {
+    const navbar = document.getElementById("navbar");
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-    if (window.scrollY > 80) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
+    // ==========================================
+    // Navbar Scroll Background Effect
+    // ==========================================
+    function handleScroll() {
+        if (navbar) {
+            if (window.scrollY > 20) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    // ==========================================
+    // Mobile Hamburger Menu Toggle
+    // ==========================================
+    if (menuBtn && mobileMenu) {
+
+        menuBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            menuBtn.classList.toggle("active");
+            mobileMenu.classList.toggle("active");
+        });
+
+        // Close when clicking outside navbar / mobile menu
+        document.addEventListener("click", function (e) {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menuBtn.classList.remove("active");
+                mobileMenu.classList.remove("active");
+            }
+        });
+
+        // Close when clicking any menu item
+        const links = mobileMenu.querySelectorAll("a");
+        links.forEach(link => {
+            link.addEventListener("click", function () {
+                menuBtn.classList.remove("active");
+                mobileMenu.classList.remove("active");
+            });
+        });
+
+        // Close on window resize if larger than tablet
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 992) {
+                menuBtn.classList.remove("active");
+                mobileMenu.classList.remove("active");
+            }
+        });
     }
 
 });
-
-window.addEventListener("scroll", () => {
-    navbar.classList.toggle("scrolled", window.scrollY > 80);
-});
-
-const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
-
-if(menuBtn && navLinks){
-    menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        menuBtn.classList.toggle("active");
-    });
-}
-
-
-
-const lightSections = document.querySelectorAll(".light-section");
-
-const Observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            navbar.classList.add("navbar-light");
-        } else {
-            navbar.classList.remove("navbar-light");
-        }
-    });
-}, {
-    threshold: 0.3
-});
-Observer.observe(navbar);
-
-lightSections.forEach(section => Observer.observe(section));
-
-
-const sections = document.querySelectorAll("section");
-
-function updateNavbar() {
-
-    const navbarHeight = navbar.offsetHeight;
-    const checkPoint = navbarHeight + 20;
-
-    sections.forEach(section => {
-
-        const rect = section.getBoundingClientRect();
-
-        if (rect.top <= checkPoint && rect.bottom >= checkPoint) {
-
-            if (section.classList.contains("light-section")) {
-
-                navbar.classList.add("navbar-light");
-
-            } else {
-
-                navbar.classList.remove("navbar-light");
-
-            }
-
-        }
-
-    });
-
-}
-
-window.addEventListener("scroll", updateNavbar);
-window.addEventListener("load", updateNavbar);

@@ -150,10 +150,7 @@ fbq('track', 'PageView');
           href="/images/favicon.png">
 
 <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/navbar.css">
-<link rel="stylesheet" href="/css/responsive.css">
 <link rel="stylesheet" href="/css/contact.css">
-<link rel="stylesheet" href="/css/contact-banner.css">
 <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -526,80 +523,127 @@ Schedule Meeting
        
 
     </div>
-      <!-- ===================================
-     CONTACT INFORMATION CARDS
-=================================== -->
+    <!-- ===================================
+         CONTACT INFORMATION CARDS
+    =================================== -->
+    <div class="container">
 
-<div class="global-contact-cards">
+        <div class="global-contact-cards">
 
-    <!-- EMAIL CARD -->
-    <div class="global-contact-card">
+            <!-- EMAIL CARD -->
+            <a href="mailto:info@brotherslight.in" class="global-contact-card">
 
-        <div class="contact-card-icon">
-            <i class="fa-solid fa-envelope"></i>
-        </div>
+                <div class="contact-card-top">
 
-        <div class="contact-card-content">
+                    <div class="contact-card-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
 
-            <span>Email</span>
+                    <span class="contact-card-badge email-badge">
+                        <span class="pulse-dot"></span> Active Support
+                    </span>
 
-            <h3>
-                info@brotherslight.in
-            </h3>
+                </div>
+
+                <div class="contact-card-content">
+
+                    <span class="contact-label">Official Email</span>
+
+                    <h3 class="contact-value">
+                        info@brotherslight.in
+                    </h3>
+
+                    <p class="contact-subtext">
+                        Online 24/7 • Fast Response
+                    </p>
+
+                </div>
+
+                <div class="contact-card-action">
+                    <span>Send an email</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+            <!-- INDIA CARD -->
+            <a href="tel:+919100739675" class="global-contact-card">
+
+                <div class="contact-card-top">
+
+                    <div class="contact-card-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <span class="contact-card-badge">
+                        India HQ
+                    </span>
+
+                </div>
+
+                <div class="contact-card-content">
+
+                    <span class="contact-label">Hyderabad Office</span>
+
+                    <h3 class="contact-value">
+                        +91 91007 39675
+                    </h3>
+
+                    <p class="contact-subtext">
+                        Hyderabad, Telangana, India
+                    </p>
+
+                </div>
+
+                <div class="contact-card-action">
+                    <span>Call office</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
+
+
+            <!-- USA CARD -->
+            <a href="tel:+15014203185" class="global-contact-card">
+
+                <div class="contact-card-top">
+
+                    <div class="contact-card-icon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <span class="contact-card-badge">
+                        United States
+                    </span>
+
+                </div>
+
+                <div class="contact-card-content">
+
+                    <span class="contact-label">USA Office</span>
+
+                    <h3 class="contact-value">
+                        +1 (501) 420-3185
+                    </h3>
+
+                    <p class="contact-subtext">
+                        Arkansas, United States
+                    </p>
+
+                </div>
+
+                <div class="contact-card-action">
+                    <span>Call office</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+            </a>
 
         </div>
 
     </div>
 
-
-    <!-- INDIA CARD -->
-    <div class="global-contact-card">
-
-        <div class="contact-card-icon">
-            <i class="fa-solid fa-location-dot"></i>
-        </div>
-
-        <div class="contact-card-content">
-
-            <span>India</span>
-
-            <h3>
-                +91 91007 39675
-            </h3>
-
-            <p>
-                Hyderabad, Telangana, India
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- USA CARD -->
-    <div class="global-contact-card">
-
-        <div class="contact-card-icon">
-            <i class="fa-solid fa-location-dot"></i>
-        </div>
-
-        <div class="contact-card-content">
-
-            <span>United States</span>
-
-            <h3>
-                +1 (501) 420-3185
-            </h3>
-
-            <p>
-                Arkansas, United States
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
 </section>
 
 
@@ -610,7 +654,6 @@ Schedule Meeting
 <script src="/js/navbar.js"></script>
 <script src="/js/contact-page.js"></script>
 <script src="/js/contact-banner.js"></script>
-<script src="/js/contact-page.js"></script>
 
 <script
     src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">

@@ -6,92 +6,52 @@
     position: relative;
     width: 100%;
     min-height: 760px;
-
     background: #0b0b0b;
-
     display: flex;
     align-items: center;
-
-    padding-top: 120px;
-    padding-bottom: 80px;
-
+    padding: 130px 0 90px;
     overflow: hidden;
-
     border-bottom-left-radius: 70px;
     border-bottom-right-radius: 70px;
+    box-sizing: border-box;
 }
 
-
 /* =========================================
-   BACKGROUND GRID
+   BACKGROUND & GLOWS
 ========================================= */
 
 .hero-bg {
     position: absolute;
     inset: 0;
-
     background-image:
-        linear-gradient(
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        );
-
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
     background-size: 60px 60px;
-
     opacity: 0.35;
-
     pointer-events: none;
 }
 
-
-/* =========================================
-   GRADIENTS
-========================================= */
-
 .hero-gradient {
     position: absolute;
-
     width: 600px;
     height: 600px;
-
     border-radius: 50%;
-
     filter: blur(130px);
-
     opacity: 0.22;
-
     pointer-events: none;
 }
 
 .hero-gradient-1 {
     top: -250px;
     left: -200px;
-
-    background:
-        radial-gradient(
-            circle,
-            #990011 0%,
-            transparent 65%
-        );
+    background: radial-gradient(circle, #990011 0%, transparent 65%);
 }
 
 .hero-gradient-2 {
     right: -250px;
     bottom: -250px;
-
-    background:
-        radial-gradient(
-            circle,
-            #5e17eb 0%,
-            transparent 65%
-        );
+    background: radial-gradient(circle, #5e17eb 0%, transparent 65%);
 }
-
 
 /* =========================================
    CONTAINER
@@ -100,118 +60,82 @@
 .hero-container {
     position: relative;
     z-index: 5;
-
     width: 92%;
-    max-width: 1500px;
-
+    max-width: 1450px;
     margin: 0 auto;
-
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
-    gap: 50px;
+    gap: 40px;
+    box-sizing: border-box;
 }
-
 
 /* =========================================
    LEFT CONTENT
 ========================================= */
 
 .hero-left {
-    flex: 0 0 45%;
-
+    flex: 0 0 46%;
     position: relative;
     z-index: 10;
+    min-width: 0;
 }
 
 .hero-eyebrow {
     position: relative;
-
     display: inline-flex;
-
     align-items: center;
-
-    margin-bottom: 25px;
-
+    margin-bottom: 24px;
     padding-left: 18px;
-
-    color: rgba(255,255,255,0.65);
-
+    color: rgba(255, 255, 255, 0.65);
     font-size: 13px;
-
-    font-weight: 500;
-
+    font-weight: 600;
     letter-spacing: 3px;
 }
 
 .hero-eyebrow::before {
     content: "";
-
     position: absolute;
-
     left: 0;
     top: 50%;
-
     width: 3px;
-    height: 22px;
-
+    height: 20px;
     background: #990011;
-
     transform: translateY(-50%);
 }
 
-
 .hero-left h1 {
-    margin: 0 0 30px;
-
+    margin: 0 0 26px;
     max-width: 650px;
-
     color: #ffffff;
-
-    font-size: clamp(48px, 5vw, 78px);
-
-    line-height: 1.04;
-
-    font-weight: 600;
-
-    letter-spacing: -3px;
+    font-size: clamp(38px, 4.8vw, 76px);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -2px;
 }
-
 
 .hero-left h1 span {
     display: block;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff 0%,
-            #ffffff 25%,
-            #4d8cff 50%,
-            #990011 75%,
-            #ff4fa3 100%
-        );
-
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #ffffff 25%,
+        #4d8cff 50%,
+        #990011 75%,
+        #ff4fa3 100%
+    );
     -webkit-background-clip: text;
     background-clip: text;
-
     -webkit-text-fill-color: transparent;
 }
 
-
 .hero-left p {
-    max-width: 560px;
-
-    margin: 0 0 45px;
-
-    color: rgba(255,255,255,0.68);
-
-    font-size: 15px;
-
+    max-width: 540px;
+    margin: 0 0 40px;
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 16px;
     line-height: 1.8;
 }
-
 
 /* =========================================
    BUTTONS
@@ -219,130 +143,86 @@
 
 .hero-buttons {
     display: flex;
-
     align-items: center;
-
     gap: 16px;
 }
 
-
 .hero-buttons a {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
-    min-height: 50px;
-
+    min-height: 48px;
     text-decoration: none;
-
     font-size: 14px;
-
-    font-weight: 500;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        color 0.3s ease;
+    font-weight: 600;
+    box-sizing: border-box;
 }
 
-
 .btn-primary {
-    gap: 20px;
-
-    padding: 0 25px;
-
+    gap: 14px;
+    padding: 0 28px;
     color: #ffffff;
-
     background: #990011;
-
     border-radius: 50px;
-
-    box-shadow:
-        0 10px 35px rgba(153,0,17,0.25);
+    box-shadow: 0 10px 30px rgba(153, 0, 17, 0.28);
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .btn-primary span {
-    font-size: 20px;
-
+    font-size: 18px;
     transition: transform 0.3s ease;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
+    background: #7d000e;
 }
 
 .btn-primary:hover span {
-    transform: translateX(5px);
+    transform: translateX(4px);
 }
 
-
 .btn-outline {
-    padding: 0 25px;
-
+    padding: 0 28px;
     color: #ffffff;
-
-    border: 1px solid rgba(255,255,255,0.22);
-
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 50px;
-
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.04);
+    transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
     background: #ffffff;
-
     color: #000000;
-
     transform: translateY(-3px);
 }
 
-
 /* =========================================
-   RIGHT SIDE
+   RIGHT 3D FRAME AREA
 ========================================= */
 
 .hero-right {
-    flex: 0 0 55%;
-    transform: translateX(-30px);
-
+    flex: 0 0 54%;
     display: flex;
-
     align-items: center;
     justify-content: center;
-
+    position: relative;
     min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
-
-
-/* =========================================
-   3D SCENE
-========================================= */
 
 .frame-scene {
-
     position: relative;
-
-    width: 720px;
-    height: 620px;
-
-    max-width: 100%;
-
-    perspective: 1600px;
-
+    width: 100%;
+    max-width: 680px;
+    height: 560px;
+    margin: 0 auto;
+    perspective: 1400px;
     transform-style: preserve-3d;
-
-    isolation: isolate;
-
-    --mouse-x: 0;
-    --mouse-y: 0;
-
+    overflow: visible;
+    box-sizing: border-box;
 }
-
-
-/* =========================================
-   WEBSITE FRAMES
-========================================= */
 
 /* =========================================
    WEBSITE FRAMES
@@ -350,609 +230,247 @@
 
 .website-frame {
     position: absolute;
-
     top: 50%;
     left: 50%;
-
-    width: 490px;
-    height: 400px;
-
-    transform-style: preserve-3d;
-
-    transform-origin: center center;
-
-    will-change: transform;
-
+    width: 440px;
+    height: 350px;
     border-radius: 18px;
-
     overflow: hidden;
-
-    background: #111;
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-        0 40px 90px rgba(0,0,0,0.55);
-
-    transition: none;
+    background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.55);
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    will-change: transform;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
-
-/* =========================================
-   FRAME INNER
-========================================= */
+.website-frame:hover {
+    box-shadow: 0 40px 95px rgba(0, 0, 0, 0.75);
+}
 
 .frame-inner {
-
     position: relative;
-
     width: 100%;
     height: 100%;
-
     overflow: hidden;
-
     border-radius: inherit;
-
     background: #111111;
 }
 
-
-.frame-inner::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            120deg,
-            rgba(255,255,255,0.13),
-            transparent 35%,
-            transparent 70%,
-            rgba(255,255,255,0.04)
-        );
-
-    pointer-events: none;
-
-    z-index: 2;
-}
-
-
 .frame-inner img {
-
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     user-select: none;
-
     -webkit-user-drag: none;
-
-    transition: transform 0.5s ease;
-}
-
-
-/* =========================================
-   FRAME POSITIONS
-========================================= */
-
-.frame-1,
-.frame-2,
-.frame-main,
-.frame-4,
-.frame-5 {
-    transform:
-        translate(-50%, -50%);
 }
 
 /* =========================================
-   MAIN FRAME LABEL
-========================================= */
-
-.frame-label {
-
-    position: absolute;
-
-    left: 20px;
-    right: 20px;
-
-    bottom: 20px;
-
-    z-index: 5;
-
-    padding: 15px;
-
-    border-radius: 12px;
-
-    background: rgba(0,0,0,0.5);
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    backdrop-filter: blur(15px);
-
-    -webkit-backdrop-filter: blur(15px);
-
-    color: #ffffff;
-}
-
-.frame-label span {
-
-    display: block;
-
-    margin-bottom: 4px;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-
-    color: rgba(255,255,255,0.55);
-}
-
-.frame-label strong {
-
-    font-size: 13px;
-
-    font-weight: 500;
-}
-
-
-/* =========================================
-   MOUSE HINT
+   EXPLORE HINT
 ========================================= */
 
 .frame-hint {
-
     position: absolute;
-
     left: 50%;
-
-    bottom: 5px;
-
+    bottom: -15px;
     transform: translateX(-50%);
-
     z-index: 20;
-
     display: flex;
-
     align-items: center;
-
     gap: 10px;
-
     white-space: nowrap;
-
-    color: rgba(255,255,255,0.55);
-
+    color: rgba(255, 255, 255, 0.55);
     font-size: 12px;
-
     pointer-events: none;
 }
 
-
 .mouse-icon {
-
-    position: relative;
-
     width: 18px;
-    height: 27px;
-
-    border: 1px solid rgba(255,255,255,0.5);
-
+    height: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
-
     display: flex;
-
     justify-content: center;
-
-    padding-top: 5px;
+    padding-top: 4px;
 }
 
 .mouse-icon i {
-
     width: 3px;
     height: 6px;
-
     border-radius: 3px;
-
     background: #ffffff;
-
-    animation:
-        mouseScroll 1.6s infinite ease-in-out;
+    animation: mouseScroll 1.6s infinite ease-in-out;
 }
-
 
 @keyframes mouseScroll {
-
-    0% {
-        opacity: 0;
-        transform: translateY(0);
-    }
-
-    30% {
-        opacity: 1;
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(7px);
-    }
-
+    0% { opacity: 0; transform: translateY(0); }
+    30% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(6px); }
 }
 
-
 /* =========================================
-   TABLET
+   TABLET RESPONSIVE (<= 1100px)
 ========================================= */
 
 @media (max-width: 1100px) {
 
     .hero {
         min-height: auto;
-
-        padding-top: 130px;
-        padding-bottom: 80px;
+        padding: 130px 0 70px;
     }
 
     .hero-container {
-
         flex-direction: column;
-
-        gap: 50px;
+        gap: 40px;
     }
 
     .hero-left {
-
         width: 100%;
-
         flex: none;
-
         text-align: center;
-
         display: flex;
-
         flex-direction: column;
-
         align-items: center;
     }
 
     .hero-left h1 {
-
-        max-width: 800px;
-
-        font-size: 58px;
+        font-size: 52px;
     }
 
     .hero-left p {
+        max-width: 620px;
+    }
 
-        max-width: 650px;
+    .hero-buttons {
+        justify-content: center;
     }
 
     .hero-right {
-
         width: 100%;
-
         flex: none;
+        margin-top: 20px;
     }
 
+    .frame-scene {
+        max-width: 580px;
+        height: 440px;
+    }
+
+    .website-frame {
+        width: 340px;
+        height: 260px;
+    }
 }
 
-
 /* =========================================
-   MOBILE HERO FIX
+   MOBILE RESPONSIVE (<= 768px)
 ========================================= */
 
 @media (max-width: 768px) {
 
     .hero {
-        width: 100%;
-        min-height: auto;
-        padding: 110px 0 50px;
-        overflow: hidden;
+        padding: 105px 0 45px;
         border-bottom-left-radius: 40px;
         border-bottom-right-radius: 40px;
     }
 
     .hero-container {
         width: 92%;
-        max-width: 100%;
-        margin: 0 auto;
-
-        display: flex;
-        flex-direction: column;
-
         gap: 30px;
     }
 
     .hero-left {
-        width: 100%;
-        max-width: 100%;
-
-        flex: none;
-
         text-align: left;
         align-items: flex-start;
     }
 
     .hero-eyebrow {
-        font-size: 10px;
+        font-size: 11px;
         letter-spacing: 2px;
-        margin-bottom: 18px;
+        margin-bottom: 16px;
     }
 
     .hero-left h1 {
-        width: 100%;
-
         font-size: 38px;
-        line-height: 1.08;
-
-        letter-spacing: -1.5px;
-
-        margin-bottom: 20px;
+        line-height: 1.1;
+        letter-spacing: -1px;
+        margin-bottom: 18px;
     }
 
     .hero-left p {
-        width: 100%;
-
-        font-size: 14px;
+        font-size: 15px;
         line-height: 1.7;
-
-        margin-bottom: 28px;
+        margin-bottom: 26px;
     }
 
     .hero-buttons {
         width: 100%;
-
-        display: flex;
         flex-direction: column;
-
         gap: 12px;
     }
 
     .hero-buttons a {
         width: 100%;
-        min-height: 50px;
+        text-align: center;
     }
-
-
-    /* ==============================
-       3D FRAME AREA
-    ============================== */
 
     .hero-right {
         width: 100%;
-        max-width: 100%;
-
-        flex: none;
-
-        display: block;
-
-        overflow: hidden;
+        margin-top: 10px;
     }
 
     .frame-scene {
-        position: relative;
-
         width: 100%;
-        height: 400px;
-
-        max-width: 100%;
-
-        overflow: hidden;
-
-        perspective: 900px;
-
-        transform-style: preserve-3d;
+        max-width: 440px;
+        height: 320px;
+        overflow: visible;
     }
-
-
-    /* ==============================
-       FRAMES
-    ============================== */
 
     .website-frame {
-        width: 220px;
-        height: 165px;
-
-        border-radius: 14px;
-
-        max-width: none;
-    }
-
-
-    .frame-main {
-         width: 240px;
+        width: 240px;
         height: 180px;
     }
 
-
-    /* ==============================
-       INITIAL POSITIONS
-    ============================== */
-
-    .frame-1 {
-
-        transform:
-            translate(-50%, -50%)
-            translate3d(-90px, 10px, -100px)
-            rotateY(20deg)
-            rotateZ(-4deg)
-            scale(.75);
-    }
-
-    .frame-2 {
-
-        transform:
-            translate(-50%, -50%)
-            translate3d(-45px, 0, -50px)
-            rotateY(12deg)
-            rotateZ(-2deg)
-            scale(.85);
-    }
-
-    .frame-main {
-
-        transform:
-            translate(-50%, -50%)
-            translate3d(0, 0, 0)
-            rotateY(0deg)
-            rotateZ(0deg)
-            scale(1);
-    }
-
-    .frame-4 {
-
-        transform:
-            translate(-50%, -50%)
-            translate3d(45px, 0, -50px)
-            rotateY(-12deg)
-            rotateZ(2deg)
-            scale(.85);
-    }
-
-    .frame-5 {
-
-        transform:
-            translate(-50%, -50%)
-            translate3d(90px, 10px, -100px)
-            rotateY(-20deg)
-            rotateZ(4deg)
-            scale(.75);
-    }
-
-
-    /* ==============================
-       HINT
-    ============================== */
-
     .frame-hint {
-        bottom: 0;
-
-        font-size: 10px;
-
-        white-space: nowrap;
+        display: none;
     }
 
+    .hero-gradient-1,
+    .hero-gradient-2 {
+        width: 320px;
+        height: 320px;
+    }
 }
 
-
 /* =========================================
-   SMALL PHONES
+   SMALL PHONE (<= 480px)
 ========================================= */
 
 @media (max-width: 480px) {
 
     .hero {
-        padding-top: 105px;
-        padding-bottom: 40px;
-    }
-
-    .hero-container {
-        width: 90%;
+        padding: 95px 0 35px;
     }
 
     .hero-left h1 {
-        font-size: 34px;
+        font-size: 32px;
     }
 
     .hero-left p {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .frame-scene {
-        height: 350px;
+        max-width: 320px;
+        height: 250px;
     }
 
     .website-frame {
-           width: 175px;
-        height: 132px;
-
-        border-radius: 12px;
+        width: 180px;
+        height: 135px;
     }
-
-    .frame-main {
-        width: 195px;
-        height: 147px;
-    }
-
-    .frame-1 {
-
-        transform:
-            translate(-50%, -50%)
-            translate3d(-65px, 5px, -80px)
-            rotateY(18deg)
-            rotateZ(-4deg)
-            scale(.75);
-    }
-
-    .frame-2 {
-
-        transform:
-            translate(-50%, -50%)
-            translate3d(-30px, 0, -40px)
-            rotateY(10deg)
-            rotateZ(-2deg)
-            scale(.84);
-    }
-
-    .frame-main {
-
-        transform:
-            translate(-50%, -50%)
-            translate3d(0, 0, 0)
-            rotateY(0deg)
-            rotateZ(0deg)
-            scale(1);
-    }
-
-    .frame-4 {
-
-        transform:
-            translate(-50%, -50%)
-            translate3d(30px, 0, -40px)
-            rotateY(-10deg)
-            rotateZ(2deg)
-            scale(.84);
-    }
-
-    .frame-5 {
-
-        transform:
-            translate(-50%, -50%)
-            translate3d(65px, 5px, -80px)
-            rotateY(-18deg)
-            rotateZ(4deg)
-            scale(.75);
-    }
-
-    .frame-label {
-        left: 8px;
-        right: 8px;
-        bottom: 8px;
-        padding: 8px;
-    }
-
-    .frame-label span {
-        font-size: 7px;
-    }
-
-    .frame-label strong {
-        font-size: 9px;
-    }
-
-}
-
-@media (max-width: 768px) {
-
-    .hero-right {
-        transform: none;
-    }
-
 }
