@@ -1,0 +1,122 @@
+
+<%- include('../partials/seo') %>
+
+<link rel="stylesheet" href="/css/style.css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+>
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<%- include('../partials/navbar') %>
+
+
+
+<main id="service-detail-page" data-service-key="<%= serviceKey %>">
+
+    <!-- SERVICES HERO -->
+    <section class="services-hero">
+
+        <div class="hero-grid"></div>
+        <div class="hero-glow glow-left"></div>
+        <div class="hero-glow glow-right"></div>
+
+        <div class="container services-hero-wrapper">
+
+            <div class="services-content">
+
+                <h1>
+                    <span id="service-title">Software Solutions</span>
+                </h1>
+
+                <p id="service-description">
+                    Business-focused software solutions designed around your requirements.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="/#contact" class="btn btn-primary">
+                        Discuss Your Project
+                    </a>
+
+                    <a href="#service-details" class="btn btn-outline">
+                        Explore Solutions
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="services-image">
+
+                <img
+    id="service-hero-image"
+    src="/images/servicepage.jpg"
+    alt="Brothers Light software development solutions"
+    loading="eager"
+><img
+                    src="/images/servicepage.jpg"
+                    alt="Brothers Light software development solutions"
+                    loading="eager"
+                >
+
+                <!-- <div class="floating-card card1">Business Automation</div>
+                <div class="floating-card card2">ERP &amp; HRMS</div>
+                <div class="floating-card card3">AI Solutions</div>
+                <div class="floating-card card4">Mobile Apps</div>
+                <div class="floating-card card5">CRM</div>
+                <div class="floating-card card6">Cloud Solutions</div> -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SERVICE FEATURE CARDS: KEEP THIS SECTION ONLY ONCE -->
+    <section class="software-section" id="service-details">
+
+        <div class="container">
+
+            <div class="software-heading">
+                <h2 id="service-heading">Our Solutions</h2>
+
+                <p id="service-intro">
+                    Explore software solutions designed for your business.
+                </p>
+            </div>
+
+            <div class="software-grid" id="service-features">
+
+                <!-- Fallback content is replaced by services-page.js -->
+                <article class="service-card show-service">
+                    <div class="service-feature-icon">
+                        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                    </div>
+
+                    <h3>Business Applications</h3>
+
+                    <p>
+                        Software designed around your business requirements.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<%- include('../partials/contact-banner') %>
+
+<script src="/js/main.js"></script>
+<script src="/js/navbar.js"></script>
+<script src="/js/services.js"></script>
+<script src="/js/why.js"></script>
+<script src="/js/cta.js"></script>
+<script src="/js/process.js"></script>
+<script src="/js/contact-banner.js"></script>
+<script src="/js/services-page.js" defer></script>

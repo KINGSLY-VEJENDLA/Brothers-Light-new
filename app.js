@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const { Resend } = require("resend");
+const blogRoutes = require("./routes/blogs");
 
 const app = express();
 
@@ -20,9 +21,56 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+const siteUrl = (process.env.SITE_URL || "https://brotherslight.in").replace(/\/$/, "");
+const seoPages = {
+    home: {
+        title: "Brothers Light | Custom Software Development by Kingsly Vejendla",
+        description: "Brothers Light is a software development brand by Kingsly Vejendla, offering custom software, web development, mobile apps, ERP, HRMS, and scalable digital solutions for businesses.",
+        canonical: `${siteUrl}/`,
+        schemaType: "WebPage"
+    },
+    about: {
+        title: "About Kingsly Vejendla | Freelance Software Developer | Brothers Light",
+        description: "Learn about Kingsly Vejendla, founder of Brothers Light, and the practical, scalable software solutions he builds for businesses.",
+        canonical: `${siteUrl}/about`,
+        schemaType: "WebPage"
+    },
+    services: {
+        title: "Software Development Services | Custom Software, ERP & HRMS | Brothers Light",
+        description: "Explore Brothers Light software development services, including custom software, web development, mobile apps, ERP, HRMS, task management, and business automation.",
+        canonical: `${siteUrl}/services`,
+        schemaType: "WebPage"
+    },
+    projects: {
+        title: "Software Development Projects | Brothers Light",
+        description: "Explore software and web development projects by Brothers Light, including Telugu Samskruthi and Cure Health 24.",
+        canonical: `${siteUrl}/projects`,
+        schemaType: "CollectionPage"
+    },
+    contact: {
+        title: "Contact Brothers Light | Software Development Enquiries",
+        description: "Contact Brothers Light about custom software, websites, mobile applications, ERP, HRMS, and business software solutions.",
+        canonical: `${siteUrl}/contact`,
+        schemaType: "WebPage"
+    }
+};
+
 // ===============================
 // Static Files
 // ===============================
+
+app.use((req, res, next) => {
+    if (
+        req.hostname.toLowerCase() === "www.brotherslight.in" &&
+        ["GET", "HEAD"].includes(req.method)
+    ) {
+        return res.redirect(301, `${siteUrl}${req.originalUrl}`);
+    }
+
+    next();
+});
+
+app.use(blogRoutes);
 
 app.use(express.static(path.join(__dirname, "Public")));
 
@@ -38,22 +86,22 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Home
 app.get("/", (req, res) => {
-    res.render("pages/index");
+    res.render("pages/index", { seo: seoPages.home });
 });
 
 // About
 app.get("/about", (req, res) => {
-    res.render("pages/about");
+    res.render("pages/about", { seo: seoPages.about });
 });
 
 // Services
 app.get("/services", (req, res) => {
-    res.render("pages/services");
+    res.render("pages/services", { seo: seoPages.services });
 });
 
 // Contact
 app.get("/contact", (req, res) => {
-    res.render("pages/contact");
+    res.render("pages/contact", { seo: seoPages.contact });
 });
 
 
@@ -62,7 +110,7 @@ app.get("/success", (req, res) => {
 });
 
 app.get("/projects", (req, res) => {
-    res.render("pages/projects");
+    res.render("pages/projects", { seo: seoPages.projects });
 });
 
 // ===============================
@@ -341,6 +389,85 @@ app.post("/send-enquiry", async (req, res) => {
     }
 });
 
+
+// =========================================
+// BROTHERS LIGHT - SOFTWARE SERVICE PAGES
+// =========================================
+
+const softwareServicePages = [
+    {
+        path: "/custom-software-development",
+        key: "customSoftware",
+        title: "Custom Software Development | Brothers Light",
+        description: "Custom software development, business applications, and workflow automation solutions by Brothers Light."
+    },
+    {
+        path: "/erp-software",
+        key: "erp",
+        title: "ERP Software Solutions | Brothers Light",
+        description: "ERP software for inventory, sales, finance, and business operations by Brothers Light."
+    },
+    {
+        path: "/hrms-software",
+        key: "hrms",
+        title: "HRMS Software Solutions | Brothers Light",
+        description: "HRMS software for employee records, attendance, leave management, and HR administration."
+    },
+    {
+        path: "/crm-software",
+        key: "crm",
+        title: "CRM Software Development | Brothers Light",
+        description: "Customer Relationship Management software for leads, customer records, sales pipelines, and follow-ups."
+    },
+    {
+        path: "/ai-solutions",
+        key: "ai",
+        title: "AI Solutions for Businesses | Brothers Light",
+        description: "Business-focused AI solutions and intelligent workflow automation from Brothers Light."
+    },
+    {
+        path: "/mobile-app-development",
+        key: "mobile",
+        title: "Mobile App Development | Brothers Light",
+        description: "Android and iOS mobile application development for businesses by Brothers Light."
+    },
+    {
+        path: "/task-management-software",
+        key: "taskManagement",
+        title: "Task Management Software | Brothers Light",
+        description: "Task and project management software for assignments, deadlines, progress tracking, and collaboration."
+    },
+    {
+        path: "/cloud-solutions",
+        key: "cloud",
+        title: "Cloud Solutions and Deployment | Brothers Light",
+        description: "Cloud hosting, application deployment, server configuration, and infrastructure support by Brothers Light."
+    }
+];
+
+// Register each service page
+softwareServicePages.forEach((service) => {
+    app.get(service.path, (req, res) => {
+        const canonical = `${siteUrl}${service.path}`;
+
+        res.render("pages/service-detail", {
+            serviceKey: service.key,
+
+            // Used by the SEO partial
+            seo: {
+                title: service.title,
+                description: service.description,
+                canonical: canonical,
+                schemaType: "WebPage"
+            },
+
+            // Also available to the EJS template
+            title: service.title,
+            description: service.description,
+            canonical: canonical
+        });
+    });
+});
 
 // ===============================
 // Server

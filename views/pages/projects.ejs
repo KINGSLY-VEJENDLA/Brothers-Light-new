@@ -10,108 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <!-- =========================================
-         PRIMARY SEO
-    ========================================== -->
-
-    <title>
-        Software Development Projects | Brothers Light
-    </title>
-
-    <meta
-        name="description"
-        content="Explore software development and web development projects by Brothers Light, including Telugu Samskruthi and Cure Health 24. Custom digital solutions for businesses in India, USA and worldwide."
-    >
-
-    <meta
-        name="keywords"
-        content="software development projects, web development projects, custom software projects, software developer Hyderabad, web development Hyderabad, custom software development India, software development USA, Brothers Light projects, Telugu Samskruthi website, Cure Health 24"
-    >
-
-    <meta
-        name="author"
-        content="Brothers Light"
-    >
-
-    <meta
-        name="robots"
-        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    >
-
-    <meta
-        name="googlebot"
-        content="index, follow"
-    >
-
-    <link
-        rel="canonical"
-        href="https://www.brotherslight.in/projects"
-    >
-
-
-    <!-- =========================================
-         THEME
-    ========================================== -->
-
-    <meta
-        name="theme-color"
-        content="#0B0B0B"
-    >
-
-    <meta
-        name="application-name"
-        content="Brothers Light"
-    >
-
-
-    <!-- =========================================
-         OPEN GRAPH
-    ========================================== -->
-
-    <meta
-        property="og:type"
-        content="website"
-    >
-
-    <meta
-        property="og:title"
-        content="Software Development Projects | Brothers Light"
-    >
-
-    <meta
-        property="og:description"
-        content="Explore software development and web development projects by Brothers Light, including Telugu Samskruthi and Cure Health 24."
-    >
-
-    <meta
-        property="og:url"
-        content="https://www.brotherslight.in/projects"
-    >
-
-    <meta
-        property="og:site_name"
-        content="Brothers Light"
-    >
-
-    <meta
-        property="og:image"
-        content="https://www.brotherslight.in/images/og-image.jpg"
-    >
-
-    <meta
-        property="og:image:width"
-        content="1200"
-    >
-
-    <meta
-        property="og:image:height"
-        content="630"
-    >
-
-    <meta
-        property="og:locale"
-        content="en_IN"
-    >
+    <%- include('../partials/seo') %>
  <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -149,36 +48,12 @@ fbq('track', 'PageView');
     <img
         height="1"
         width="1"
+        alt=""
         style="display:none"
         src="https://www.facebook.com/tr?id=1541698201029656&ev=PageView&noscript=1"
     />
 </noscript>
 <!-- End Meta Pixel Code -->
-
-    <!-- =========================================
-         TWITTER / X
-    ========================================== -->
-
-    <meta
-        name="twitter:card"
-        content="summary_large_image"
-    >
-
-    <meta
-        name="twitter:title"
-        content="Software Development Projects | Brothers Light"
-    >
-
-    <meta
-        name="twitter:description"
-        content="Explore custom software and web development projects by Brothers Light, including Telugu Samskruthi and Cure Health 24."
-    >
-
-    <meta
-        name="twitter:image"
-        content="https://www.brotherslight.in/images/og-image.jpg"
-    >
-
 
     <!-- =========================================
          FAVICON
@@ -236,60 +111,6 @@ fbq('track', 'PageView');
         href="/css/projects.css"
     >
 
-
-    <!-- =========================================
-         PROJECT PAGE SCHEMA
-    ========================================== -->
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "@id": "https://www.brotherslight.in/projects",
-        "url": "https://www.brotherslight.in/projects",
-        "name": "Software Development Projects | Brothers Light",
-        "description": "Portfolio of software development and web development projects created by Brothers Light.",
-        "isPartOf": {
-            "@type": "WebSite",
-            "@id": "https://www.brotherslight.in/#website"
-        },
-        "about": {
-            "@type": "Thing",
-            "name": "Software Development Projects"
-        },
-        "publisher": {
-            "@type": "Person",
-            "name": "Kingsly Vejendla",
-            "url": "https://www.brotherslight.in/about"
-        }
-    }
-    </script>
-
-
-    <!-- =========================================
-         BREADCRUMB SCHEMA
-    ========================================== -->
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.brotherslight.in/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Projects",
-                "item": "https://www.brotherslight.in/projects"
-            }
-        ]
-    }
-    </script>
 
 </head>
 
@@ -352,145 +173,97 @@ fbq('track', 'PageView');
 
 
             <div class="projects-heading">
-
-                <span>
-                    FEATURED PROJECTS
-                </span>
-
-                <h2>
-                    Turning Ideas Into
-                    <strong>Digital Experiences</strong>
-                </h2>
-
+                <span>OUR WORK</span>
+                <h2>Selected Projects</h2>
+                <p>Websites and business systems built by Brothers Light.</p>
             </div>
 
-
-
-            <!-- =================================
-                 PROJECT 1
-            ================================== -->
-
-            <article class="project-card">
-
-                <div class="project-image">
-
-                    <img
-                        src="/images/telugu-samskruthi-project.png"
-                        alt="Telugu Samskruthi website developed by Brothers Light">
-
-                    <div class="project-number">
-                        01
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="/images/telugu-samskruthi-project.png"
+                            alt="Telugu Samskruthi online learning platform"
+                            loading="lazy">
                     </div>
-
-                </div>
-
-
-                <div class="project-content">
-
-                    <span class="project-category">
-                        CULTURE • WEBSITE DEVELOPMENT
-                    </span>
-
-                    <h3>
-                        Telugu Samskruthi
-                    </h3>
-
-                    <p>
-                        A digital platform focused on Telugu culture,
-                        heritage, traditions and cultural content,
-                        designed to provide an engaging online
-                        experience for its audience.
-                    </p>
-
-
-                    <div class="project-tech">
-
-                        <span>Web Development</span>
-
-                        <span>Responsive Design</span>
-
-                        <span>UI/UX</span>
-
+                    <div class="project-content">
+                        <span class="project-category">LEARNING PLATFORM</span>
+                        <h3>Telugu Samskruthi</h3>
+                        <p>Online Telugu language and cultural learning for students and families worldwide.</p>
+                        <div class="project-tech"><span>Education · Website</span></div>
+                        <a class="project-link" href="https://telugusamskruthi.com/" target="_blank" rel="noopener noreferrer">
+                            Visit Website <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
                     </div>
+                </article>
 
-
-                    <a
-                        href="#"
-                        class="project-link">
-
-                        View Project
-
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- =================================
-                 PROJECT 2
-            ================================== -->
-
-            <article class="project-card project-card-reverse">
-
-                <div class="project-image">
-
-                    <img
-                        src="/images/cure-health-24-project.png"
-                        alt="Cure Health 24 healthcare website developed by Brothers Light">
-
-                    <div class="project-number">
-                        02
+                <article class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="/images/cure-health-24-project.png"
+                            alt="Cure Health 24 healthcare website"
+                            loading="lazy">
                     </div>
-
-                </div>
-
-
-                <div class="project-content">
-
-                    <span class="project-category">
-                        HEALTHCARE • WEB APPLICATION
-                    </span>
-
-                    <h3>
-                        Cure Health 24
-                    </h3>
-
-                    <p>
-                        A healthcare-focused digital platform designed
-                        to provide users with convenient access to
-                        healthcare information, services and
-                        telemedicine functionality.
-                    </p>
-
-
-                    <div class="project-tech">
-
-                        <span>Web Development</span>
-
-                        <span>Telemedicine</span>
-
-                        <span>Responsive Design</span>
-
+                    <div class="project-content">
+                        <span class="project-category">HEALTHCARE</span>
+                        <h3>Cure Health 24</h3>
+                        <p>A healthcare website and telemedicine platform connecting people with convenient care.</p>
+                        <div class="project-tech"><span>Healthcare · Telemedicine</span></div>
+                        <a class="project-link" href="https://curehealth24.com/" target="_blank" rel="noopener noreferrer">
+                            Visit Website <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
                     </div>
+                </article>
 
+                <article class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="https://www.yuganrealestate.com/images/services-hero.jpg"
+                            alt="Yugan Real Estate property services"
+                            loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">REAL ESTATE</span>
+                        <h3>Yugan Real Estate</h3>
+                        <p>A real estate website helping buyers explore property services and local expertise.</p>
+                        <div class="project-tech"><span>Real Estate · Website</span></div>
+                        <a class="project-link" href="https://www.yuganrealestate.com/" target="_blank" rel="noopener noreferrer">
+                            Visit Website <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
 
-                    <a
-                        href="#"
-                        class="project-link">
+                <article class="project-card">
+                    <div class="project-image project-image-placeholder project-image-crm" role="img" aria-label="Brothers Light Blog CRM project artwork">
+                        <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                        <span>Brothers Light</span>
+                        <strong>Blog CRM</strong>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">CONTENT MANAGEMENT</span>
+                        <h3>Brothers Light Blog CRM</h3>
+                        <p>A custom CRM for creating, editing, publishing, and managing blog content.</p>
+                        <div class="project-tech"><span>Custom Software · Blog CMS</span></div>
+                        <span class="project-link project-link-unavailable">Deployment link available on request</span>
+                    </div>
+                </article>
 
-                        View Project
-
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                    </a>
-
-                </div>
-
-            </article>
+                <article class="project-card">
+                    <div class="project-image">
+                        <img
+                            src="/images/erp.jpg"
+                            alt="Business dashboard artwork for Brothers Light ERP"
+                            loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">BUSINESS OPERATIONS</span>
+                        <h3>Brothers Light ERP</h3>
+                        <p>A custom ERP and invoicing system for business operations, quotations, and invoices.</p>
+                        <div class="project-tech"><span>Custom Software · ERP</span></div>
+                        <span class="project-link project-link-unavailable">Deployment link available on request</span>
+                    </div>
+                </article>
+            </div>
 
 
         </div>

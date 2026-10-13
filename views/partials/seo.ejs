@@ -1,0 +1,97 @@
+<title><%= seo.title %></title>
+<meta name="description" content="<%= seo.description %>">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#0B0B0B">
+<meta name="application-name" content="Brothers Light">
+<link rel="canonical" href="<%= seo.canonical %>">
+
+<meta property="og:type" content="<%= seo.ogType || 'website' %>">
+<meta property="og:title" content="<%= seo.title %>">
+<meta property="og:description" content="<%= seo.description %>">
+<meta property="og:url" content="<%= seo.canonical %>">
+<meta property="og:site_name" content="Brothers Light">
+<meta property="og:image" content="<%= seo.image || 'https://brotherslight.in/images/logo-red.png' %>">
+<meta property="og:locale" content="en_IN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= seo.title %>">
+<meta name="twitter:description" content="<%= seo.description %>">
+<meta name="twitter:image" content="<%= seo.image || 'https://brotherslight.in/images/logo-red.png' %>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://brotherslight.in/#person",
+      "name": "Kingsly Vejendla",
+      "url": "https://brotherslight.in/about",
+      "jobTitle": "Freelance Software Developer",
+      "sameAs": [
+        "https://www.linkedin.com/in/kingsly-vejendla-1a3882247/"
+      ],
+      "knowsAbout": [
+        "Software Development",
+        "Custom Software Development",
+        "ERP Solutions",
+        "HRMS",
+        "Mobile App Development",
+        "Cloud Solutions",
+        "Business Software"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://brotherslight.in/#organization",
+      "name": "Brothers Light",
+      "url": "https://brotherslight.in/",
+      "logo": {
+        "@id": "https://brotherslight.in/#logo"
+      },
+      "founder": {
+        "@id": "https://brotherslight.in/#person"
+      },
+      "brand": {
+        "@id": "https://brotherslight.in/#brand"
+      }
+    },
+    {
+      "@type": "Brand",
+      "@id": "https://brotherslight.in/#brand",
+      "name": "Brothers Light",
+      "url": "https://brotherslight.in/"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://brotherslight.in/#logo",
+      "url": "https://brotherslight.in/images/logo-red.png",
+      "contentUrl": "https://brotherslight.in/images/logo-red.png",
+      "caption": "Brothers Light"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://brotherslight.in/#website",
+      "url": "https://brotherslight.in/",
+      "name": "Brothers Light",
+      "description": "Software development and digital solutions by Kingsly Vejendla.",
+      "publisher": {
+        "@id": "https://brotherslight.in/#organization"
+      }
+    },
+    {
+      "@type": <%- JSON.stringify(seo.schemaType).replace(/</g, '\\u003c') %>,
+      "@id": <%- JSON.stringify(`${seo.canonical}#webpage`).replace(/</g, '\\u003c') %>,
+      "url": <%- JSON.stringify(seo.canonical).replace(/</g, '\\u003c') %>,
+      "name": <%- JSON.stringify(seo.title).replace(/</g, '\\u003c') %>,
+      "description": <%- JSON.stringify(seo.description).replace(/</g, '\\u003c') %>,
+      "isPartOf": {
+        "@id": "https://brotherslight.in/#website"
+      },
+      "about": {
+        "@id": "https://brotherslight.in/#organization"
+      }
+    }
+  ]
+}
+</script>

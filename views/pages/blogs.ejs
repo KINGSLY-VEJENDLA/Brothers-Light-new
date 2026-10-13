@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/seo') %>
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/blogs.css">
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <main class="bl-blog-page">
+        <section class="bl-blog-hero">
+            <div class="bl-blog-container">
+                <p class="bl-blog-eyebrow">BROTHERS LIGHT INSIGHTS</p>
+                <h1>Ideas, insights <span>&amp; innovation</span></h1>
+                <p>Practical knowledge on software, automation, and digital solutions to help your business move forward.</p>
+                <form class="bl-blog-filters" action="/blogs" method="get">
+                    <label class="bl-blog-search">
+                        <span class="bl-visually-hidden">Search articles</span>
+                        <input type="search" name="search" value="<%= search %>" placeholder="Search articles...">
+                    </label>
+                    <label class="bl-blog-select">
+                        <span class="bl-visually-hidden">Filter by category</span>
+                        <select name="category">
+                            <option value="">All categories</option>
+                            <% categories.forEach(function(item) { %>
+                                <option value="<%= item.category %>" <%= selectedCategory === item.category ? "selected" : "" %>><%= item.category %> (<%= item.total %>)</option>
+                            <% }) %>
+                        </select>
+                    </label>
+                    <button type="submit">Search articles</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="bl-blog-container bl-blog-content" aria-labelledby="bl-blog-list-title">
+            <% if (apiError) { %>
+                <div class="bl-blog-state bl-blog-error" role="status">
+                    <span class="bl-blog-state-icon" aria-hidden="true"><i class="fa-solid fa-cloud-arrow-down"></i></span>
+                    <h2>Articles are temporarily unavailable</h2>
+                    <p>We could not connect to the Brothers Light Blog service. Please try again in a little while.</p>
+                    <a class="bl-blog-button" href="/blogs">Try again</a>
+                </div>
+            <% } else if (!total) { %>
+                <div class="bl-blog-state">
+                    <span class="bl-blog-state-icon" aria-hidden="true"><i class="fa-regular fa-newspaper"></i></span>
+                    <h2>No articles published yet</h2>
+                    <p>There are no published articles to show right now. Please check back soon.</p>
+                </div>
+            <% } else { %>
+                <div class="bl-blog-heading">
+                    <div>
+                        <p class="bl-blog-eyebrow">FRESH PERSPECTIVES</p>
+                        <h2 id="bl-blog-list-title"><%= search || selectedCategory ? "Matching articles" : "Latest articles" %></h2>
+                    </div>
+                    <p><%= total %> <%= total === 1 ? "article" : "articles" %></p>
+                </div>
+
+                <% if (blogs.length) { %>
+                    <div class="bl-blog-grid">
+                        <% blogs.forEach(function(blog) { %>
+                            <article class="bl-blog-card">
+                                <a class="bl-blog-card-image" href="/blogs/<%= encodeURIComponent(blog.slug) %>" aria-label="Read <%= blog.title %>">
+                                    <% if (blog.featured_image_url) { %>
+                                        <img src="<%= blog.featured_image_url %>" alt="<%= blog.title %>" loading="lazy" onerror="this.onerror=null;this.src='/images/blog-image-fallback.svg';">
+                                    <% } else { %>
+                                        <img src="/images/blog-image-fallback.svg" alt="<%= blog.title %>">
+                                    <% } %>
+                                    <% if (blog.category) { %><span class="bl-blog-card-category"><%= blog.category %></span><% } %>
+                                </a>
+                                <div class="bl-blog-card-body">
+                                    <div class="bl-blog-card-meta">
+                                        <% if (dateIso(blog.published_at)) { %><time datetime="<%= dateIso(blog.published_at) %>"><i class="fa-regular fa-calendar" aria-hidden="true"></i><%= dateDisplay(blog.published_at) %></time><% } %>
+                                        <span><i class="fa-regular fa-clock" aria-hidden="true"></i><%= readingTime(blog) %> min read</span>
+                                    </div>
+                                    <h3><a href="/blogs/<%= encodeURIComponent(blog.slug) %>"><%= blog.title %></a></h3>
+                                    <p><%= blog.excerpt || "" %></p>
+                                    <a class="bl-blog-readmore" href="/blogs/<%= encodeURIComponent(blog.slug) %>">Read Article <span aria-hidden="true">→</span></a>
+                                </div>
+                            </article>
+                        <% }) %>
+                    </div>
+                <% } %>
+
+                <% if (totalPages > 1) { %>
+                    <nav class="bl-blog-pagination" aria-label="Blog pages">
+                        <% if (page > 1) { %>
+                            <a href="<%= pageUrl(page - 1, search, selectedCategory) %>" rel="prev" aria-label="Previous page"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>Previous</span></a>
+                        <% } else { %>
+                            <span class="is-disabled" aria-disabled="true"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>Previous</span></span>
+                        <% } %>
+                        <span class="bl-blog-page-count">Page <strong><%= page %></strong> of <%= totalPages %></span>
+                        <% if (page < totalPages) { %>
+                            <a href="<%= pageUrl(page + 1, search, selectedCategory) %>" rel="next" aria-label="Next page"><span>Next</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        <% } else { %>
+                            <span class="is-disabled" aria-disabled="true"><span>Next</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        <% } %>
+                    </nav>
+                <% } %>
+            <% } %>
+        </section>
+    </main>
+
+    <%- include('../partials/contact-banner') %>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/contact-banner.js"></script>
+</body>
+</html>
